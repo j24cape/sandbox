@@ -14,7 +14,13 @@ if (count($argv) !== 2) {
 }
 $token = $argv[1];
 
-$result = TokenGenerator::verifySignature($token, $signature_secret);
-echo $result ? 'Verified' : 'Not verified', "\n";
+try {
+    $result = TokenGenerator::verifySignature($token, $signature_secret);
+    echo $result ? 'Verified' : 'Not verified', "\n";
+} catch (Exception $e) {
+    echo sprintf('Exception %s: %s at line %d in %s',
+        get_class($e), $e->getMessage(), $e->getLine(), $e->getFile()), "\n";
+    exit(1);
+}
 
 exit;
