@@ -6,4 +6,5 @@ It's an awesome sandbox.
 
 - Vonage
   - PHP
-    - [Verifying signature tokens](vonage/php/verify-signature)
+    - [Create a call with local NCCO](vonage/php/create-call-ncco)
+    - [Verify signature tokens](vonage/php/verify-signature)
