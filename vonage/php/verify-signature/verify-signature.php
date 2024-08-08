@@ -1,5 +1,5 @@
 <?php
-require_once '../vendor/autoload.php';
+require_once sprintf('%s/vendor/autoload.php', dirname(__DIR__, 1));
 
 use Vonage\JWT\TokenGenerator;
 
