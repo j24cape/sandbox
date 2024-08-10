@@ -1,5 +1,5 @@
-import sys
 import os
+import sys
 from dotenv import load_dotenv
 from vonage_jwt.verify_jwt import verify_signature
 
@@ -13,12 +13,10 @@ if len(sys.argv) != 2:
 token = sys.argv[1]
 
 try:
-    if verify_signature(token, signature_secret):
-        print('Verified')
-    else:
-        print('Not verified')
-except Exception as err:
-    print(f"Unexpected {err=}, {type(err)=}")
+    result = verify_signature(token, signature_secret)
+    print('Verified' if result else 'Not verified')
+except Exception as e:
+    print('Exception %s: %s' % (type(e), e))
     sys.exit(1)
 
-exit
+sys.exit
