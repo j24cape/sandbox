@@ -1,13 +1,14 @@
 <?php
 require_once sprintf('%s/vendor/autoload.php', dirname(__DIR__, 1));
 
-use OpenTok\OpenTok;
+use Vonage\Client;
+use Vonage\Client\Credentials\Keypair;
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-$api_key = $_ENV['VONAGE_API_KEY'];
-$api_secret = $_ENV['VONAGE_API_SECRET'];
+$application_id = $_ENV['VONAGE_APPLICATION_ID'];
+$application_private_key = $_ENV['VONAGE_APPLICATION_PRIVATE_KEY'];
 
 if (count($argv) !== 2) {
     echo sprintf(
@@ -17,8 +18,10 @@ if (count($argv) !== 2) {
 $session_id = $argv[1];
 
 try {
-    $opentok = new OpenTok($api_key, $api_secret);
-    echo $opentok->generateToken($session_id);
+    $credentials = new Keypair($application_private_key, $application_id);
+    $client = new Client($credentials);
+    $token = $client->video()->generateClientToken($session_id);
+    echo $token, "\n";
 } catch (Exception $e) {
     echo sprintf('Exception %s: %s at line %d in %s',
         get_class($e), $e->getMessage(), $e->getLine(), $e->getFile()), "\n";
