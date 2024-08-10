@@ -16,4 +16,5 @@ It's an awesome sandbox.
       - [Verify signature tokens](vonage/php/verify-signature)
   - Python
     - Signature tokens
+      - [Generate a new signature token](vonage/python/generate-signature)
       - [Verify signature tokens](vonage/python/verify-signature)
