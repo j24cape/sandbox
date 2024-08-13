@@ -13,6 +13,7 @@ It's an awesome sandbox.
       - [Generate a Video token for a session](vonage/php/generate-video-token)
     - Users
       - [Create a User](vonage/php/create-user)
+      - [List Users](vonage/php/list-users)
     - Authentication
       - [Generate a JWT](vonage/php/generate-jwt)
     - Signature tokens
