@@ -8,7 +8,8 @@ load_dotenv()
 signature_secret = os.environ.get('VONAGE_SIGNATURE_SECRET')
 
 if len(sys.argv) != 2:
-    print('Usage: python verify-signature.py VONAGE_SIGNATURE_TOKEN')
+    print('Usage: python %s VONAGE_SIGNATURE_TOKEN'
+        % (os.path.basename(__file__)))
     sys.exit(1)
 token = sys.argv[1]
 
