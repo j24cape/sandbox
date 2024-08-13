@@ -10,10 +10,17 @@ $dotenv->load();
 $application_id = $_ENV['VONAGE_APPLICATION_ID'];
 $application_private_key = $_ENV['VONAGE_APPLICATION_PRIVATE_KEY'];
 
+if (count($argv) !== 2) {
+    echo sprintf('Usage: php %s VONAGE_USER_NAME', basename(__FILE__)), "\n";
+    exit(1);
+}
+$user_name = $argv[1];
+
 try {
     $credentials = new Keypair($application_private_key, $application_id);
     $client = new Client($credentials);
     $claims = [
+        'subject' => $user_name,
         'acl' => [
             'paths' => [
                 '/*/rtc/**' => (object) [],
