@@ -3,7 +3,6 @@ require_once sprintf('%s/vendor/autoload.php', dirname(__DIR__, 1));
 
 use Vonage\Client;
 use Vonage\Client\Credentials\Keypair;
-use Vonage\Users\User;
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
