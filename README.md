@@ -14,6 +14,7 @@ It's an awesome sandbox.
     - Users
       - [Create a User](vonage/php/create-user)
       - [List Users](vonage/php/list-users)
+      - [Delete a User](vonage/php/delete-user)
     - Authentication
       - [Generate a JWT](vonage/php/generate-jwt)
     - Signature tokens
