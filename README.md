@@ -11,6 +11,8 @@ It's an awesome sandbox.
     - Video
       - [Create a Video session](vonage/php/create-video-session)
       - [Generate a Video token for a session](vonage/php/generate-video-token)
+    - Authentication
+      - [Generate a JWT](vonage/php/generate-jwt)
     - Signature tokens
       - [Generate a signature token](vonage/php/generate-signature)
       - [Verify signature tokens](vonage/php/verify-signature)
