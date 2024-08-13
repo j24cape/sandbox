@@ -15,8 +15,6 @@ if len(sys.argv) != 2:
 session_id = sys.argv[1]
 
 try:
-    result = verify_signature(token, signature_secret)
-    print('Verified' if result else 'Not verified')
     client = Client(
         application_id=application_id,
         private_key=application_private_key,
