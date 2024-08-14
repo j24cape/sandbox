@@ -9,6 +9,7 @@ $dotenv->load();
 
 $application_id = $_ENV['VONAGE_APPLICATION_ID'];
 $application_private_key = $_ENV['VONAGE_APPLICATION_PRIVATE_KEY'];
+$jwt_ttl = (int) $_ENV['JWT_TTL'] ?? 900;
 
 if (count($argv) !== 2) {
     echo sprintf('Usage: php %s VONAGE_USER_NAME', basename(__FILE__)), "\n";
@@ -21,6 +22,7 @@ try {
     $client = new Client($credentials);
     $claims = [
         'subject' => $user_name,
+        'ttl' => $jwt_ttl,
         'acl' => [
             'paths' => [
                 '/*/rtc/**' => (object) [],
