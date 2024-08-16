@@ -21,17 +21,19 @@ try {
     $credentials = new Keypair($application_private_key, $application_id);
     $client = new Client($credentials);
     $claims = [
-        'subject' => $user_name,
+        'sub' => $user_name,
         'ttl' => $jwt_ttl,
         'acl' => [
+            '/*/rtc/**' => (object) [],
             'paths' => [
-                '/*/rtc/**' => (object) [],
                 '/*/users/**' => (object) [],
                 '/*/conversations/**' => (object) [],
                 '/*/sessions/**' => (object) [],
                 '/*/devices/**' => (object) [],
                 '/*/image/**' => (object) [],
                 '/*/media/**' => (object) [],
+                '/*/applications/**' => (object) [],
+                '/*/push/**' => (object) [],
                 '/*/knocking/**' => (object) [],
                 '/*/legs/**' => (object) [],
             ]
