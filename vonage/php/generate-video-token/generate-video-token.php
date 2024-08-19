@@ -9,6 +9,7 @@ $dotenv->load();
 
 $application_id = $_ENV['VONAGE_APPLICATION_ID'];
 $application_private_key = $_ENV['VONAGE_APPLICATION_PRIVATE_KEY'];
+$jwt_ttl = (int) $_ENV['JWT_TTL'] ?? 900;
 
 if (count($argv) !== 2) {
     echo sprintf(
@@ -20,7 +21,10 @@ $session_id = $argv[1];
 try {
     $credentials = new Keypair($application_private_key, $application_id);
     $client = new Client($credentials);
-    $token = $client->video()->generateClientToken($session_id);
+    $options = [
+        'ttl' => $jwt_ttl,
+    ];
+    $token = $client->video()->generateClientToken($session_id, $options);
     echo $token, "\n";
 } catch (Exception $e) {
     echo sprintf('Exception %s: %s at line %d in %s',
