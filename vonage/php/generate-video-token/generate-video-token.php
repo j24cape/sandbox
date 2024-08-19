@@ -3,6 +3,7 @@ require_once sprintf('%s/vendor/autoload.php', dirname(__DIR__, 1));
 
 use Vonage\Client;
 use Vonage\Client\Credentials\Keypair;
+use Vonage\Video\Role;
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
@@ -23,6 +24,7 @@ try {
     $client = new Client($credentials);
     $options = [
         'ttl' => $jwt_ttl,
+        'role' => Role::PUBLISHER,
     ];
     $token = $client->video()->generateClientToken($session_id, $options);
     echo $token, "\n";
