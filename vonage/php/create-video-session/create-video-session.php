@@ -14,7 +14,7 @@ try {
     $credentials = new Keypair($application_private_key, $application_id);
     $client = new Client($credentials);
     $session = $client->video()->createSession();
-    echo $session->getSessionId();
+    echo $session->getSessionId(), "\n";
 } catch (Exception $e) {
     echo sprintf('Exception %s: %s at line %d in %s',
         get_class($e), $e->getMessage(), $e->getLine(), $e->getFile()), "\n";
