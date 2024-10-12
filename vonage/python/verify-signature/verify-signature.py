@@ -1,9 +1,11 @@
 import os
 import sys
+from os.path import dirname, join
 from dotenv import load_dotenv
 from vonage_jwt.verify_jwt import verify_signature
 
-load_dotenv()
+dotenv_path = join(dirname(__file__), '../../.env')
+load_dotenv(dotenv_path)
 
 signature_secret = os.environ.get('VONAGE_SIGNATURE_SECRET')
 

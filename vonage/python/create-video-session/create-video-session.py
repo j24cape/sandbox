@@ -1,9 +1,11 @@
 import os
 import sys
+from os.path import dirname, join
 from dotenv import load_dotenv
 from vonage import Client
 
-load_dotenv()
+dotenv_path = join(dirname(__file__), '../../.env')
+load_dotenv(dotenv_path)
 
 application_id = os.environ.get('VONAGE_APPLICATION_ID')
 application_private_key = os.environ.get('VONAGE_APPLICATION_PRIVATE_KEY')

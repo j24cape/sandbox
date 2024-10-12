@@ -6,7 +6,7 @@ use GuzzleHttp\Psr7\Request;
 use Vonage\Client;
 use Vonage\Client\Credentials\Keypair;
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__, 2));
 $dotenv->load();
 
 $application_id = $_ENV['VONAGE_APPLICATION_ID'];
