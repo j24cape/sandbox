@@ -8,6 +8,7 @@ It's an awesome sandbox.
   - PHP
     - Voice
       - [Create an outbound call with local NCCO](vonage/php/create-call-ncco)
+      - [Download a voice recording file](vonage/php/download-recording)
     - Video
       - [Create a Video session](vonage/php/create-video-session)
       - [Generate a Video token for a session](vonage/php/generate-video-token)
