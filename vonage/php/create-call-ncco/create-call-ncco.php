@@ -15,12 +15,12 @@ use Vonage\Voice\NCCO\{
 $dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__, 2));
 $dotenv->load();
 
-try {
-    $application_id = $_ENV['VONAGE_APPLICATION_ID'];
-    $application_private_key = $_ENV['VONAGE_APPLICATION_PRIVATE_KEY'];
-    $vonage_number = $_ENV['VONAGE_NUMBER'];
-    $to_number = $_ENV['TO_NUMBER'];
+$application_id = $_ENV['VONAGE_APPLICATION_ID'];
+$application_private_key = $_ENV['VONAGE_APPLICATION_PRIVATE_KEY'];
+$vonage_number = $_ENV['VONAGE_NUMBER'];
+$to_number = $_ENV['TO_NUMBER'];
     
+try {
     $keypair = new Keypair(
         $application_private_key,
         $application_id, 
