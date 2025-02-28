@@ -7,8 +7,12 @@ name = "pypi"
 python-dotenv = "*"
 vonage-jwt = "*"
 vonage = "*"
+requests = "*"
 
 [dev-packages]
 
 [requires]
 python_version = "3.10"
+
+[scripts]
+send-sms = 'python send-sms/send-sms.py'
