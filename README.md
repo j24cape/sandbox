@@ -7,7 +7,7 @@ It's an awesome sandbox.
 - Twilio
   - Python
     - Messaging
-      - [Send an SMS](vonage/python/send-sms)
+      - [Send an SMS](twilio/python/send-sms)
 - Vonage
   - PHP
     - Voice
